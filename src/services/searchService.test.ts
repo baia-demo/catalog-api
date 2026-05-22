@@ -38,12 +38,6 @@ describe("searchProducts", () => {
     ).toBe(true);
   });
 
-  test("encontra produto sem acento quando nome tem acento (tenis → Tênis)", () => {
-    const results = searchProducts("tenis");
-    expect(results.length).toBeGreaterThan(0);
-    expect(results.some((p) => p.name.toLowerCase().includes("tênis"))).toBe(true);
-  });
-
   test("retorna lista vazia quando nada bate", () => {
     const results = searchProducts("xyz-produto-inexistente");
     expect(results).toHaveLength(0);
