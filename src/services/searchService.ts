@@ -3,6 +3,8 @@ import { products, type Product } from "../data/products.js";
 function tokenize(text: string): string[] {
   return text
     .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .split(/\s+/)
     .filter(Boolean);
 }
