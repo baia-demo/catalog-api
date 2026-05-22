@@ -1,11 +1,7 @@
 import { products, type Product } from "../data/products.js";
 
-function normalize(text: string): string {
-  return text.normalize("NFD").replace(/[̀-ͯ]/g, "");
-}
-
 function tokenize(text: string): string[] {
-  return normalize(text)
+  return text
     .toLowerCase()
     .split(/\s+/)
     .filter(Boolean);
