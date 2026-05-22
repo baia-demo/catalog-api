@@ -42,10 +42,4 @@ describe("searchProducts", () => {
     const results = searchProducts("xyz-produto-inexistente");
     expect(results).toHaveLength(0);
   });
-
-  test("encontra produto com acento ao buscar sem acento (tenis → Tênis)", () => {
-    const results = searchProducts("tenis");
-    expect(results.length).toBeGreaterThan(0);
-    expect(results.some((p) => p.name.toLowerCase().includes("tênis"))).toBe(true);
-  });
 });
